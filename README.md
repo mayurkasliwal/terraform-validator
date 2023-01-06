@@ -5,7 +5,9 @@ This contains the sample code and steps to use terraform validator for policy en
 
 ## 1. Pre-requisite -
    a. Please make sure you have Terraform latest version installed on your machine
+   
    b. you have policy library of your constraints which you want to enforce/validate on your machine where you will be running terraform
+   
    c. You need the following Identity and Access Management (IAM) permissions for that project:
    
 resourcemanager.projects.getIamPolicy – This permission can be granted with the Security Reviewer role for the organization.
