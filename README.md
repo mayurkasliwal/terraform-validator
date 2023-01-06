@@ -22,32 +22,14 @@ This contains the sample code and steps to use terraform validator for policy en
 
     git clone https://github.com/mayurkasliwal/terraform-validator.git
 
- 3. go to the terraform-validator folder and run below commands 
+ 3. go to the terraform-validator folder and run below command to run the deployment pipeline
 
- 4. Initialize Terraform and generate a Terraform plan using the following:
- 
-    terraform init
+ bash deploy.sh test
 
- 5. Export the Terraform plan, if asked, click Authorize when prompted:
- 
-    terraform plan -out=test.tfplan
+This will run the script which will create tf plan , validates it against the predefined policies and based on that either
+apply configuration if no violations or stop the deployment with appripriate error.
 
-6. Convert the Terraform plan to JSON:
-
-   terraform show -json test.tfplan > tfplan.json
-
-7. Install the terraform-tools component:
-
-   sudo apt-get install google-cloud-sdk-terraform-tools
-
-9. Enter the following command to validate that your Terraform plan complies with your policies:
-
-    gcloud beta terraform vet tfplan.json --policy-library=<path of your policy-library folder> --format=json
-    eg gcloud beta terraform vet tfplan_err.json --policy-library=/home/mayur/policy-library --format=json
-
-10 . if there are no issues and your plan is complaint as per policy emtpy output will be shown
-however , if some constraints are not met then it will show the details as below -
-
+Example of violation found is as below -
 
 ![image](https://user-images.githubusercontent.com/81803712/210961310-be6d0876-be46-4340-83c5-950eaacd4095.png)
 ![image](https://user-images.githubusercontent.com/81803712/210961688-61c4fd7a-4da2-4da4-897f-1ff4b91ff620.png)
