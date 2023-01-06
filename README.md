@@ -18,18 +18,23 @@ This contains the sample code and steps to use terraform validator for policy en
  go to the terraform-validator folder and run below commands 
 
  4. Initialize Terraform and generate a Terraform plan using the following:
+ 
     terraform init
 
  5. Export the Terraform plan, if asked, click Authorize when prompted:
+ 
     terraform plan -out=test.tfplan
 
 6. Convert the Terraform plan to JSON:
+
    terraform show -json test.tfplan > tfplan.json
 
 7. Install the terraform-tools component:
+
    sudo apt-get install google-cloud-sdk-terraform-tools
 
 9. Enter the following command to validate that your Terraform plan complies with your policies:
+
     gcloud beta terraform vet tfplan.json --policy-library=<path of your policy-library folder> --format=json
     eg gcloud beta terraform vet tfplan_err.json --policy-library=/home/mayur/policy-library --format=json
 
