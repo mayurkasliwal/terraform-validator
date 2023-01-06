@@ -35,4 +35,6 @@ go to the terraform-validator folder and run below commands
 however , if some constraints are not met then it will show the details as below -
 
 
+![image](https://user-images.githubusercontent.com/81803712/210961310-be6d0876-be46-4340-83c5-950eaacd4095.png)
+![image](https://user-images.githubusercontent.com/81803712/210961688-61c4fd7a-4da2-4da4-897f-1ff4b91ff620.png)
 
